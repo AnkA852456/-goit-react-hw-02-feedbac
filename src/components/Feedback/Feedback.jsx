@@ -27,12 +27,14 @@ class Feedback extends Component {
   };
 
   countTotalFeedback = () => {
-    this.total = this.state.good + this.state.neutral + this.state.bad + 1;
+    this.total = Number(
+      this.state.good + this.state.neutral + this.state.bad + 1
+    );
   };
   countPositiveFeedbackPercentage = () => {
-    this.total = this.state.good + this.state.neutral + this.state.bad + 1;
-
-    this.percent = (this.state.good / this.total) * 100 + 1;
+    console.log(this.state.good);
+    console.log(this.setState.total);
+    this.percent = ((this.state.good + 1) / this.total) * 100;
     this.percentRounded = this.percent.toFixed(2);
   };
 
@@ -59,6 +61,7 @@ class Feedback extends Component {
             onClick={() => {
               this.handleButtonNeutral();
               this.countTotalFeedback();
+              this.countPositiveFeedbackPercentage();
             }}
           >
             Neutral
@@ -70,6 +73,7 @@ class Feedback extends Component {
             onClick={() => {
               this.handleButtonBad();
               this.countTotalFeedback();
+              this.countPositiveFeedbackPercentage();
             }}
           >
             Bad
