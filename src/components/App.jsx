@@ -1,10 +1,9 @@
-import { Feedback } from './Feedback/Feedback';
-import { Statistics } from './Statistics/Statistics';
+import Feedback from './Feedback/Feedback';
 
 export const App = () => {
   return (
     <>
-      <div
+      {/* <div
         style={{
           height: '100vh',
           display: 'flex',
@@ -15,9 +14,8 @@ export const App = () => {
         }}
       >
         React homework template
-      </div>
+      </div> */}
       <Feedback />
-      <Statistics />
     </>
   );
 };
